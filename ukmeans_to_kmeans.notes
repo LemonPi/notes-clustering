@@ -1,0 +1,23 @@
+-----------------------------------------------------------
+    Overview
+-----------------------------------------------------------
+- want to cluster objects with uncertainty
+	- into k clusters
+	- minimize total expected distance (ED)
+- previous work proposed UK-means
+	- expensive to calculate ED
+		- sample pdf
+- this work reduces UK-means to kmeans
+	- formulat for computing ED efficiently
+- use similar method to parallel axis theorem for pdf
+	- when distance is squared euclidean distance
+		- d(x,y) = |y - x|^2
+	- ED(oi, y) = ED(oi, ki) + |y - ki|^2
+		- note for Gaussians centroid ki is the mean
+- reduces problem to kmeans on the centroids
+
+-----------------------------------------------------------
+    Restrictions
+-----------------------------------------------------------
+- distance function is based on Euclidean norm
+- MSE is used for ED
